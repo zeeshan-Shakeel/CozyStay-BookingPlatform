@@ -1,0 +1,136 @@
+body {
+     font-family: 'Plus Jakarta Sans', sans-serif !important;
+ display: flex;
+     flex-direction: column;
+ min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  
+}
+.container{
+    flex:1;
+}
+/* Edit-Form-Label */
+.form-label{
+    
+    font-weight: 900;
+}
+
+
+
+.row{
+    display: flex;
+    justify-content: center;
+}
+.navbar {
+    height: 7rem;
+    width: 100%;
+    background-color: #f8f9fa; /* or your desired color */
+}
+
+
+.navbar-brand {
+    color: violet;
+    font-size: 2rem;
+}
+.social-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    font-size: 1.6rem;
+}
+.info-link{
+    width: 100%;
+   
+}
+.info-link a{
+    text-decoration: none;
+    color: beige;
+}
+.info-link a:hover{
+text-decoration: underline;
+}
+.info-brand{
+    font-size: 1.2rem;
+    color: aliceblue;
+}
+.info{
+    text-align: center;
+ height:10rem;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card */
+.listings-card{
+    border:none !important;
+    margin-bottom: 2rem !important;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    object-fit: cover;
+    
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-img-overlay{
+    display: flex;
+justify-content: space-between;
+}
+/* .card-img-overlay {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+    } */
+.fa-solid{
+    font-size: 1.3rem;
+    margin-top: 4px;
+}
+.listing-link{
+    text-decoration: none;
+}
+
+/* .card-img-overlay {
+    pointer-events: none;
+}
+
+.card-img-overlay * {
+    pointer-events: auto;
+}
+
+ */ 
+
+ /* show location */
+ .fa-location-dot{
+    font-size: 1.3rem;
+ }
+ .fa-mountain-city{
+    font-size:large;
+ }
+ .card-body{
+    font-size: 1.2rem;
+ }
+
+  #map {
+    width: 100%;
+    height: 300px; /* Adjust as needed */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (min-width: 768px) {
+    #map {
+      height: 400px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    #map {
+      height: 500px;
+    }
+  }

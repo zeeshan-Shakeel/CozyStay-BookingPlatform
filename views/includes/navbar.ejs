@@ -1,0 +1,89 @@
+<!-- Bootstrap CSS & Font Awesome -->
+
+
+<style>
+  .custom-navbar {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', sans-serif;
+    padding: 10px 0;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e83e8c !important;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+  }
+
+  .navbar-brand i {
+    color: #e83e8c;
+  }
+
+  .nav-link {
+    color: #343a40;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-link:hover {
+    background-color: #dee2e6;
+    color: #000;
+  }
+
+  .nav-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+  }
+
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-wrap: wrap;
+    }
+  }
+</style>
+
+<nav class="custom-navbar sticky-top border-bottom">
+  <div class="container-fluid navbar-container">
+
+    <!-- Brand -->
+    <a class="navbar-brand" href="/listings">
+      <i class="fa-solid fa-compass"></i> CozyStay
+    </a>
+
+    <!-- Navigation Links -->
+    <div class="nav-group">
+          <a class="nav-link" href="/listings">All Listings</a>
+      <a class="nav-link" href="/listings/create">Add Listing</a>
+    </div>
+
+    <!-- Auth Links -->
+    <div class="nav-group">
+      <% if (!currUser) { %>
+        <a class="nav-link" href="/login">Login</a>
+        <a class="nav-link" href="/signUp">SignUp</a>
+      <% } %>
+      <% if (currUser) { %>
+        <a class="nav-link" href="/logOut">LogOut</a>
+      <% } %>
+    </div>
+
+  </div>
+</nav>

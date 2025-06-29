@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CozyStay – Full Stack Documentation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+      color: #212529;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #e83e8c;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #343a40;
+      font-size: 1.5rem;
+      margin-top: 30px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .section {
+      margin-top: 20px;
+    }
+    .download-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #e83e8c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .download-btn:hover {
+      background: #d63384;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="doc-content">
+    <h1><i class="fa-solid fa-house"></i> CozyStay – Full Stack Rental Listing Web Application</h1>
+
+    <div class="section">
+      <h2>🔧 Tech Stack</h2>
+      <ul>
+        <li><strong>Backend:</strong> Node.js, Express.js</li>
+        <li><strong>Frontend:</strong> EJS (Embedded JavaScript), Bootstrap 5, Font Awesome</li>
+        <li><strong>Database:</strong> MongoDB Atlas (cloud-hosted)</li>
+        <li><strong>Authentication:</strong> Passport.js (with sessions)</li>
+        <li><strong>Cloud Storage:</strong> Cloudinary (for images) with Multer</li>
+        <li><strong>Maps Integration:</strong> Mapbox (for interactive location display)</li>
+        <li><strong>Deployment:</strong> Render</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>📌 Project Overview</h2>
+      <p>
+        CozyStay is a full-featured rental listing platform where users can create, explore, and review accommodation listings. 
+        It includes secure user authentication, map-based location viewing, image uploads, and CRUD functionality for listings and reviews.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>✅ Key Features</h2>
+
+      <h3>User Authentication & Authorization</h3>
+      <ul>
+        <li>Registration, login, logout using Passport.js</li>
+        <li>Session-based login with secure route protection</li>
+        <li>Only listing/review owners can edit or delete their own content</li>
+      </ul>
+
+      <h3>CRUD Operations</h3>
+      <ul>
+        <li>Users can create, update, and delete listings and reviews</li>
+        <li>Server-side validation and user-friendly error handling</li>
+      </ul>
+
+      <h3>Image Uploads</h3>
+      <ul>
+        <li>Integrated Cloudinary for image hosting</li>
+        <li>Handled uploads via Multer middleware</li>
+      </ul>
+
+      <h3>Map Integration</h3>
+      <ul>
+        <li>Integrated Mapbox to display listing locations on an interactive map</li>
+        <li>Geocoding used to convert address input into coordinates</li>
+      </ul>
+
+      <h3>Middleware Usage</h3>
+      <ul>
+        <li><code>isLoggedIn</code>: Protects routes from unauthenticated access</li>
+        <li><code>isOwner</code>: Ensures only owners can modify/delete listings</li>
+        <li><code>validateListing</code> and <code>validateReview</code>: Custom validation logic</li>
+        <li><code>express-mongo-sanitize</code> and <code>helmet</code>: For security</li>
+      </ul>
+
+      <h3>Responsive UI</h3>
+      <ul>
+        <li>Built with Bootstrap 5 to ensure a clean, mobile-friendly interface</li>
+        <li>Font Awesome icons for modern design aesthetics</li>
+      </ul>
+
+      <h3>Deployment</h3>
+      <ul>
+        <li>Deployed on Render</li>
+        <li>Environment variables managed securely via <code>.env</code> file</li>
+        <li>MongoDB Atlas used as the production database</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🔐 Security Measures</h2>
+      <ul>
+        <li><code>helmet</code> for setting secure HTTP headers</li>
+        <li><code>express-mongo-sanitize</code> to prevent NoSQL injection</li>
+        <li>Flash messages for feedback and user experience</li>
+        <li>Input validation to prevent invalid or malicious data</li>
+      </ul>
+    </div>
+
+    <button class="download-btn" onclick="downloadPage()">📥 Download This Page</button>
+  </div>
+
+  <script>
+    function downloadPage() {
+      const element = document.createElement("a");
+      const html = document.documentElement.outerHTML;
+      const file = new Blob([html], { type: 'text/html' });
+      element.href = URL.createObjectURL(file);
+      element.download = "CozyStay_Project_Documentation.html";
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }
+  </script>
+</body>
+</html>

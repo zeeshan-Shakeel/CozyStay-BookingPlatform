@@ -1,0 +1,113 @@
+<%- layout('layouts/boilerplate') -%>
+
+<body>
+<style>
+    .filters {
+        text-align: center;
+        margin: 10px;
+        opacity: 0.6;
+        transition: opacity 0.3s ease;
+    }
+
+    .filters:hover {
+        opacity: 1;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .filters p {
+        font-size: 0.8rem;
+        margin-top: 5px;
+    }
+
+    .tax {
+        display: none;
+    }
+
+    .filter {
+        background-color: #343a40;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .form-check-label {
+        color: white;
+    }
+</style>
+
+<div class="container-fluid filter">
+    <div class="row justify-content-center">
+        <!-- Filter Icons -->
+        <div class="col-12 col-md-10">
+            <div class="row text-white justify-content-center">
+                <div class="col-auto filters"><a href="/PremiumSite"><div><i class="fas fa-house fa-lg"></i></div><p>Home</p></a></div>
+                <div class="col-auto filters"><a href="/PremiumSite"><div><i class="fas fa-mug-hot fa-lg"></i></div><p>Breakfast</p></a></div>
+                <div class="col-auto filters"><a href="/PremiumSite"><div><i class="fas fa-swimmer fa-lg"></i></div><p>Pool</p></a></div>
+                <div class="col-auto filters"><a href="/PremiumSite"><div><i class="fas fa-umbrella-beach fa-lg"></i></div><p>Beach</p></a></div>
+                <div class="col-auto filters"><a href="/PremiumSite"><div><i class="fas fa-mountain fa-lg"></i></div><p>Mountain</p></a></div>
+                <div class="col-auto filters"><a href="/PremiumSite"><div><i class="fas fa-tree fa-lg"></i></div><p>Nature</p></a></div>
+                <div class="col-auto filters"><a href="/PremiumSite"><div><i class="fas fa-dog fa-lg"></i></div><p>Pet</p></a></div>
+                <div class="col-auto filters"><a href="/PremiumSite"><div><i class="fas fa-wifi fa-lg"></i></div><p>Wi-Fi</p></a></div>
+                <div class="col-auto filters"><a href="/PremiumSite"><div><i class="fas fa-fire fa-lg"></i></div><p>Fire</p></a></div>
+                <div class="col-auto filters"><a href="/PremiumSite"><div><i class="fas fa-parking fa-lg"></i></div><p>Parking</p></a></div>
+                <div class="col-auto filters"><a href="/PremiumSite"><div><i class="fas fa-bolt fa-lg"></i></div><p>Electric</p></a></div>
+            </div>
+        </div>
+
+        <!-- Toggle Switch -->
+        <div class="col-12 col-md-2 mt-3 text-md-start text-center">
+            <div class="form-check form-switch text-white">
+                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                <label class="form-check-label" for="switchCheckDefault">After-Tax switch checkbox</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+   <div class="container mt-4">
+
+    <div
+        class="row justify-content-start row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 g-4">
+        <%for(let listing of listings){%>
+        
+            <a href="/listings/<%=listing._id%>" class="listing-link">
+            <div class="card " >
+
+                <img src=<%=listing.image.url%> class="card-img-top " style="height:16rem" alt="listing-image ">
+
+                <div class="card-img-overlay">
+                    <div>
+                        <button type="button"
+                            class="btn btn-dark rounded-pill px-4 py-0">Featured</button>
+                    </div>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="card-body">
+                    <div class="p-text">
+                       <h6 class="fw-bold text-dark mb-1"><%= listing.title %></h6>
+<p class="text-muted mb-0 font" style="font-size: 0.8rem;">PKR: <%= listing.price.toLocaleString("en-IN") %> /- for <b>1</b> night &nbsp;  <i class="tax">+18%GST</i></p>
+
+                    </div>
+
+                </div>
+            </div>
+        </a>
+
+        <%}%>
+    </div>
+
+   
+</div>
+</body>
+<script>
+    let taxSwitch = document.getElementById("switchCheckDefault");
+    taxSwitch.addEventListener("click", () => {
+        let tax = document.getElementsByClassName("tax");
+        for (info of tax) {
+            info.style.display = (info.style.display != 'inline') ? 'inline' : 'none';
+        }
+    });
+</script>

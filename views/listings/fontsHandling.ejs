@@ -1,0 +1,110 @@
+<%- layout('layouts/boilerplate') -%>
+<title>Premium Access Only</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #2c3e50, #3498db);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px 30px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .highlight {
+      color: #f39c12;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #f39c12;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #e67e22;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.95rem;
+      color: #ecf0f1;
+    }
+
+    .footer a {
+      color: #ecf0f1;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔒 Premium Access Only</h1>
+    <p>
+      The <span class="highlight">Cozy Stay</span> feature is currently accessible to our <span class="highlight">Premium Customers</span> only.<br/><br/>
+      If you're not yet registered, please register to enjoy this and many other exclusive features.
+    </p>
+    <a href="#" class="btn" onclick="handleRegister()">Register Now</a>
+
+    <div class="footer">
+      <p>If the issue persists after registering, please email our customer service at:</p>
+      <p><a href="mailto:zeeshanabccba@gmail.com?subject=Cozy Stay Feature Access Issue">zeeshanabccba@gmail.com</a></p>
+      <p><em>Subject: Cozy Stay Feature Access Issue</em></p>
+    </div>
+  </div>
+
+  <script>
+    function handleRegister() {
+      alert("Redirecting to registration page...");
+      // You can redirect here:
+      // window.location.href = "register.html";
+    }
+  </script>
+</body>
+</html>
